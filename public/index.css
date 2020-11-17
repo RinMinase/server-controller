@@ -16,6 +16,12 @@ body {
 	margin-bottom: 48px;
 }
 
+@media (max-width: 576px) {
+	.qr-code {
+		display: none;
+	}
+}
+
 .shutdown-image-container {
 	display: inline-block;
 	background-color: #cecece;

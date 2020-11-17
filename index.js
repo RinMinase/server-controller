@@ -23,15 +23,15 @@ app
 		const url = process.env.URL || "";
 		res.json(url);
 	})
-	.post("/power-off", (req, res) => {
-		powerOff((err) => {
-			if (err) {
-				log(err)
-				res.status(500).json({ error: "Error in powering-off" })
-			} else {
-				res.end()
-			}
-		});
+	.post("/shutdown", (req, res) => {
+		// powerOff((err) => {
+		// 	if (err) {
+		// 		log(err)
+		// 		res.status(500).json({ error: "Error in powering-off" })
+		// 	} else {
+		// 		res.end()
+		// 	}
+		// });
 	})
 	.listen(port, () => {
 		log("listening on port " + chalk.blue(port));
