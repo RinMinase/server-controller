@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="index.css">
@@ -24,21 +26,12 @@
 			crossorigin="anonymous"
 		></script>
 
-		<script>
-			var xmlHttp = new XMLHttpRequest();
-			xmlHttp.onreadystatechange = function() {
-				if (xmlHttp.readyState == 4
-					&& xmlHttp.status == 200
-					&& xmlHttp.responseText) {
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+			integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+			crossorigin="anonymous"
+		></script>
 
-					let qr = qrcode(4, 'L');
-					qr.addData(xmlHttp.responseText);
-					qr.make();
-					document.getElementById('QR').innerHTML = qr.createImgTag(5, 8);
-				}
-			}
-			xmlHttp.open("GET", '/url');
-			xmlHttp.send(null);
-		</script>
+		<script src="js/qr.js"></script>
 	</body>
 </html>
