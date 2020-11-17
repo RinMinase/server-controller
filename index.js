@@ -4,6 +4,7 @@ const path = require("path");
 const chalk = require("chalk");
 const express = require("express");
 const powerOff = require("power-off");
+const checkSpace = require("check-disk-space");
 const app = express();
 const port = process.env.PORT || 80;
 
@@ -22,6 +23,14 @@ app
 	.get("/url", (req, res) => {
 		const url = process.env.URL || "";
 		res.json(url);
+	})
+	.get("/size", (req, res) => {
+		let drive = process.env.DRIVE || "C";
+
+		drive = drive.charAt(0);
+		checkSpace(`${drive}:`).then((space) => {
+			res.json(space);
+		});
 	})
 	.post("/shutdown", (req, res) => {
 		// powerOff((err) => {
