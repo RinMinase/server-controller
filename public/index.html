@@ -13,5 +13,32 @@
 	</head>
 	<body>
 		Contents
+
+		<br><br>
+
+		<div id="QR"></div>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"
+			integrity="sha512-ZDSPMa/JM1D+7kdg2x3BsruQ6T/JpJo3jWDWkCZsP+5yVyp1KfESqLI+7RqB5k24F7p2cV7i2YHh/890y6P6Sw=="
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.onreadystatechange = function() {
+				if (xmlHttp.readyState == 4
+					&& xmlHttp.status == 200
+					&& xmlHttp.responseText) {
+
+					let qr = qrcode(4, 'L');
+					qr.addData(xmlHttp.responseText);
+					qr.make();
+					document.getElementById('QR').innerHTML = qr.createImgTag(5, 8);
+				}
+			}
+			xmlHttp.open("GET", '/url');
+			xmlHttp.send(null);
+		</script>
 	</body>
 </html>
