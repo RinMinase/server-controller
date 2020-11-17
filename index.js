@@ -14,6 +14,10 @@ const log = (input) => {
 
 app
 	.use(express.static(path.join(__dirname, 'public')))
+	.get('/url', (req, res) => {
+		const url = process.env.URL || '';
+		res.json(url);
+	})
 	.listen(port, function () {
 		log('listening on port ' + chalk.blue(port));
 	});
