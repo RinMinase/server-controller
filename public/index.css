@@ -1,19 +1,9 @@
+@import "./css/utils.css";
+
 body {
 	font-family: 'Roboto', sans-serif;
 	background-color: #212121;
 	color: #eee;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.container {
-	margin-top: 64px;
-}
-
-.header {
-	margin-bottom: 48px;
 }
 
 @media (max-width: 576px) {
@@ -34,4 +24,25 @@ body {
 	width: 150px;
 	margin: 2px 8px 2px 0;
 	border-radius: 50%;
+}
+
+.progress {
+	background-color: #dae4e9;
+}
+
+.progress-inner {
+	font-size: .75rem;
+	width: 0%;
+	background-color: #43a047;
+	padding: .25rem 0;
+	text-align: center;
+	color: #fff;
+}
+
+.progress-inner.danger {
+	background-color: #ef5350;
+}
+
+.progress-inner.warning {
+	background-color: #ff9800;
 }
