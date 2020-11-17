@@ -1,4 +1,4 @@
-$.get("/url", {}, function (response) {
+$.get("/url", {}, (response) => {
 	let qr = qrcode(4, "L");
 	qr.addData(response);
 	qr.make();
