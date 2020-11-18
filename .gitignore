@@ -2,7 +2,8 @@
 .env
 
 # compiled output
-dist/
+frontend/dist/
+backend/public/
 
 # IDE storage
 .vscode/*
