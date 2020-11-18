@@ -33,15 +33,15 @@ app
 		});
 	})
 	.post("/shutdown", (req, res) => {
-		// powerOff((err) => {
-		// 	if (err) {
-		// 		log(err)
-		// 		res.status(500).json({ error: "Error in powering-off" })
-		// 	} else {
-		// 		res.end()
-		// 	}
-		// });
+		powerOff((err) => {
+			if (err) {
+				log(err)
+				res.status(500).json({ error: "Error in powering-off" })
+			} else {
+				res.end()
+			}
+		});
 	})
-	.listen(port, () => {
+	.listen(80, "0.0.0.0", () => {
 		log("listening on port " + chalk.blue(port));
 	});
