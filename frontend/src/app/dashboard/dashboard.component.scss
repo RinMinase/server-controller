@@ -1,0 +1,40 @@
+@media (max-width: 576px) {
+	.qr-code {
+		display: none;
+	}
+}
+
+.shutdown-image-container {
+	display: inline-block;
+	background-color: #cecece;
+	border-radius: 50%;
+	cursor: pointer;
+
+	.shutdown-image {
+		width: 150px;
+		width: 150px;
+		margin: 2px 8px 2px 0;
+		border-radius: 50%;
+	}
+}
+
+.progress {
+	background-color: #dae4e9;
+
+	.progress-inner {
+		font-size: .75rem;
+		width: 0%;
+		background-color: #43a047;
+		padding: .25rem 0;
+		text-align: center;
+		color: #fff;
+
+		&.danger {
+			background-color: #ef5350;
+		}
+
+		&.warning {
+			background-color: #ff9800;
+		}
+	}
+}
