@@ -2,16 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'app-root',
-	template: `
-		<div style="text-align:center" class="content">
-		<h1>
-			Welcome to {{title}}!
-		</h1>
-		</div>
-		<router-outlet></router-outlet>
-	`,
-	styles: []
+	template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {
-	title = 'server-controller-fe';
-}
+export class AppComponent { }
