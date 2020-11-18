@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "ng serve",
-    "build": "ng build --prod"
+    "build": "ng build --prod",
+    "build-be": "npm run build && rm -rf ../backend/public && cp -r dist ../backend/public"
   },
   "dependencies": {
     "@angular/common": "^11.0.0",
